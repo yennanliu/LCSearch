@@ -226,15 +226,15 @@ export default {
 }
 
 .app-header h1 {
-  color: white;
   margin: 0 0 0.5rem 0;
   font-size: 3rem;
   font-weight: 700;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: relative;
 }
 
 .app-header p {
