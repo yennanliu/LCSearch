@@ -188,92 +188,163 @@ export default {
 .filter-panel {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .filter-section {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
 }
 
 .filter-select {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
   font-size: 14px;
-  background: white;
-  max-width: 200px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 220px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  color: #374151;
+}
+
+.filter-select:focus,
+.filter-select:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(103, 126, 234, 0.1);
+  transform: translateY(-1px);
 }
 
 .filter-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .filter-chip {
-  padding: 6px 12px;
-  background: #f8f9fa;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  font-size: 13px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  color: #1f2937;
+  backdrop-filter: blur(15px);
+  text-shadow: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.filter-chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.filter-chip:hover::before {
+  left: 100%;
 }
 
 .filter-chip:hover {
-  background: #e9ecef;
-  border-color: #bbb;
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(103, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
+  color: #374151;
 }
 
 .filter-chip.active {
-  background: #1976d2;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: #059669;
   color: white;
-  border-color: #1976d2;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4), 0 3px 10px rgba(16, 185, 129, 0.3);
+  transform: translateY(-3px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.filter-chip.active:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5), 0 8px 20px rgba(16, 185, 129, 0.3);
 }
 
 .show-more-btn {
-  padding: 6px 12px;
-  background: none;
-  border: 1px dashed #bbb;
-  border-radius: 20px;
-  font-size: 13px;
-  color: #666;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .show-more-btn:hover {
-  border-color: #1976d2;
-  color: #1976d2;
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.35);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .filter-actions {
-  padding-top: 0.5rem;
-  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
 }
 
 .clear-filters-btn {
-  padding: 8px 16px;
-  background: #dc3545;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 14px;
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .clear-filters-btn:hover {
-  background: #c82333;
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.clear-filters-btn:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -281,9 +352,17 @@ export default {
     gap: 0.75rem;
   }
   
+  .filter-chips {
+    gap: 0.6rem;
+  }
+  
   .filter-chip {
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  
+  .filter-select {
+    max-width: 100%;
   }
 }
 </style>
