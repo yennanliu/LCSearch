@@ -6,6 +6,21 @@
     </header>
     
     <main class="app-main">
+      <div class="controls-section">
+        <button 
+          @click="showDataManager = !showDataManager"
+          class="toggle-data-manager"
+        >
+          {{ showDataManager ? 'Hide' : 'Show' }} Database Manager
+        </button>
+        
+        <DataManager
+          v-if="showDataManager"
+          :current-problem-count="problems.length"
+          @data-updated="handleDataUpdate"
+        />
+      </div>
+      
       <SearchBar 
         @search="handleSearch" 
         @filter="handleFilter"
@@ -23,17 +38,20 @@
 import { ref, onMounted, computed } from 'vue'
 import SearchBar from './components/SearchBar.vue'
 import ProblemList from './components/ProblemList.vue'
+import DataManager from './components/DataManager.vue'
 
 export default {
   name: 'App',
   components: {
     SearchBar,
-    ProblemList
+    ProblemList,
+    DataManager
   },
   setup() {
     const problems = ref([])
     const loading = ref(true)
     const searchQuery = ref('')
+    const showDataManager = ref(false)
     const filters = ref({
       difficulty: '',
       tags: [],
@@ -63,6 +81,15 @@ export default {
 
     const loadProblems = async () => {
       try {
+        // First try to load from localStorage (user uploaded data)
+        const savedData = localStorage.getItem('lc-search-problems')
+        if (savedData) {
+          problems.value = JSON.parse(savedData)
+          loading.value = false
+          return
+        }
+
+        // Fallback to default data file
         const response = await fetch('/data/problems.json')
         problems.value = await response.json()
       } catch (error) {
@@ -134,14 +161,30 @@ export default {
       filters.value.sortBy = sortBy
     }
 
+    const handleDataUpdate = (newData) => {
+      problems.value = newData
+      // Reset filters when data changes
+      searchQuery.value = ''
+      filters.value = {
+        difficulty: '',
+        tags: [],
+        patterns: [],
+        companies: [],
+        sortBy: 'recency'
+      }
+    }
+
     onMounted(loadProblems)
 
     return {
+      problems,
       filteredProblems,
       loading,
+      showDataManager,
       handleSearch,
       handleFilter,
-      handleSort
+      handleSort,
+      handleDataUpdate
     }
   }
 }
@@ -181,5 +224,33 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toggle-data-manager {
+  align-self: flex-end;
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-data-manager:hover {
+  background: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .toggle-data-manager {
+    align-self: stretch;
+  }
 }
 </style>
