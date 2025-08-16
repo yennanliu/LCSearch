@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LeetCode Problems Database Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "difficulty", "url", "tags", "patterns", "companies", "dateAdded"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "LeetCode problem ID"
+      },
+      "title": {
+        "type": "string",
+        "description": "Problem title"
+      },
+      "difficulty": {
+        "type": "string",
+        "enum": ["Easy", "Medium", "Hard"],
+        "description": "Problem difficulty level"
+      },
+      "url": {
+        "type": "string",
+        "format": "uri",
+        "description": "Direct link to the LeetCode problem"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Problem categories and data structures (Array, Hash Table, Graph, etc.)"
+      },
+      "patterns": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Common algorithmic patterns (Two Pointers, Sliding Window, etc.)"
+      },
+      "companies": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Companies that frequently ask this problem"
+      },
+      "dateAdded": {
+        "type": "string",
+        "format": "date",
+        "description": "Date when problem was added to database (YYYY-MM-DD format)"
+      },
+      "description": {
+        "type": "string",
+        "description": "Brief problem description (optional)"
+      }
+    }
+  }
+}
