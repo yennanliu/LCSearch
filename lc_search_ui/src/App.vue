@@ -9,6 +9,7 @@
       <SearchBar 
         @search="handleSearch" 
         @filter="handleFilter"
+        @sort="handleSort"
       />
       <ProblemList 
         :problems="filteredProblems"
@@ -37,8 +38,28 @@ export default {
       difficulty: '',
       tags: [],
       patterns: [],
-      companies: []
+      companies: [],
+      sortBy: 'recency' // recency, difficulty, title
     })
+
+    const sortProblems = (problems, sortBy) => {
+      const sorted = [...problems]
+      
+      switch (sortBy) {
+        case 'recency':
+          return sorted.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
+        case 'difficulty': {
+          const difficultyOrder = { 'Easy': 1, 'Medium': 2, 'Hard': 3 }
+          return sorted.sort((a, b) => difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty])
+        }
+        case 'title':
+          return sorted.sort((a, b) => a.title.localeCompare(b.title))
+        case 'id':
+          return sorted.sort((a, b) => a.id - b.id)
+        default:
+          return sorted.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
+      }
+    }
 
     const loadProblems = async () => {
       try {
@@ -54,39 +75,51 @@ export default {
     const filteredProblems = computed(() => {
       let filtered = problems.value
 
+      // Text search - search in title, description, and tags
       if (searchQuery.value) {
-        const query = searchQuery.value.toLowerCase()
-        filtered = filtered.filter(problem => 
-          problem.title.toLowerCase().includes(query) ||
-          problem.description?.toLowerCase().includes(query)
-        )
+        const query = searchQuery.value.toLowerCase().trim()
+        
+        filtered = filtered.filter(problem => {
+          const titleMatch = problem.title.toLowerCase().includes(query)
+          const descMatch = problem.description?.toLowerCase().includes(query) || false
+          const tagMatch = problem.tags.some(tag => tag.toLowerCase().includes(query))
+          const patternMatch = problem.patterns.some(pattern => pattern.toLowerCase().includes(query))
+          const companyMatch = problem.companies.some(company => company.toLowerCase().includes(query))
+          
+          return titleMatch || descMatch || tagMatch || patternMatch || companyMatch
+        })
       }
 
+      // Difficulty filter
       if (filters.value.difficulty) {
         filtered = filtered.filter(problem => 
           problem.difficulty === filters.value.difficulty
         )
       }
 
+      // Tags filter (OR logic - match any selected tag)
       if (filters.value.tags.length > 0) {
         filtered = filtered.filter(problem => 
           filters.value.tags.some(tag => problem.tags.includes(tag))
         )
       }
 
+      // Patterns filter (OR logic - match any selected pattern)
       if (filters.value.patterns.length > 0) {
         filtered = filtered.filter(problem => 
           filters.value.patterns.some(pattern => problem.patterns.includes(pattern))
         )
       }
 
+      // Companies filter (OR logic - match any selected company)
       if (filters.value.companies.length > 0) {
         filtered = filtered.filter(problem => 
           filters.value.companies.some(company => problem.companies.includes(company))
         )
       }
 
-      return filtered
+      // Apply sorting
+      return sortProblems(filtered, filters.value.sortBy)
     })
 
     const handleSearch = (query) => {
@@ -97,13 +130,18 @@ export default {
       filters.value = { ...filters.value, ...newFilters }
     }
 
+    const handleSort = (sortBy) => {
+      filters.value.sortBy = sortBy
+    }
+
     onMounted(loadProblems)
 
     return {
       filteredProblems,
       loading,
       handleSearch,
-      handleFilter
+      handleFilter,
+      handleSort
     }
   }
 }

@@ -17,6 +17,21 @@
       </button>
     </div>
     
+    <div class="sort-section">
+      <label for="sort-select" class="sort-label">Sort by:</label>
+      <select 
+        id="sort-select"
+        v-model="currentSort" 
+        @change="handleSort"
+        class="sort-select"
+      >
+        <option value="recency">Latest First</option>
+        <option value="difficulty">Difficulty (Easy → Hard)</option>
+        <option value="title">Title (A → Z)</option>
+        <option value="id">Problem ID</option>
+      </select>
+    </div>
+
     <FilterPanel 
       :all-tags="allTags"
       :all-patterns="allPatterns"
@@ -35,9 +50,10 @@ export default {
   components: {
     FilterPanel
   },
-  emits: ['search', 'filter'],
+  emits: ['search', 'filter', 'sort'],
   setup(props, { emit }) {
     const searchQuery = ref('')
+    const currentSort = ref('recency')
     
     const allTags = [
       'Array', 'Hash Table', 'String', 'Dynamic Programming', 'Math',
@@ -76,14 +92,20 @@ export default {
       emit('filter', filters)
     }
 
+    const handleSort = () => {
+      emit('sort', currentSort.value)
+    }
+
     return {
       searchQuery,
+      currentSort,
       allTags,
       allPatterns,
       allCompanies,
       handleSearch,
       clearSearch,
-      handleFilter
+      handleFilter,
+      handleSort
     }
   }
 }
@@ -140,5 +162,47 @@ export default {
 
 .clear-button:hover {
   background-color: #f5f5f5;
+}
+
+.sort-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.sort-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.sort-select {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sort-select:focus {
+  border-color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .sort-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .sort-select {
+    width: 100%;
+  }
 }
 </style>
