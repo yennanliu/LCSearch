@@ -296,24 +296,25 @@ export default {
 
 .show-more-btn {
   padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 2px dashed rgba(255, 255, 255, 0.5);
+  background: rgba(255, 56, 92, 0.1);
+  border: 2px solid rgba(255, 56, 92, 0.3);
   border-radius: 30px;
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  color: #FF385C;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(15px);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+  box-shadow: 0 4px 12px rgba(255, 56, 92, 0.15);
 }
 
 .show-more-btn:hover {
-  border-color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.35);
-  color: white;
+  border-color: rgba(255, 56, 92, 0.5);
+  background: rgba(255, 56, 92, 0.15);
+  color: #FF2A52;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(255, 56, 92, 0.25);
 }
 
 .filter-actions {
