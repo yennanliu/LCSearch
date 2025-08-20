@@ -2539,5 +2539,181 @@
     "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
     "dateAdded": "2023-01-1557",
     "description": "Given a directed acyclic graph, with n vertices numbered from 0 to n-1, and an array edges."
+  },
+  {
+    "id": 77,
+    "title": "Combinations",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/combinations/",
+    "tags": ["Array", "Backtracking"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-77",
+    "description": "Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n]."
+  },
+  {
+    "id": 47,
+    "title": "Permutations II",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/permutations-ii/",
+    "tags": ["Array", "Backtracking"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-47",
+    "description": "Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations."
+  },
+  {
+    "id": 216,
+    "title": "Combination Sum III",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/combination-sum-iii/",
+    "tags": ["Array", "Backtracking"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-216",
+    "description": "Find all valid combinations of k numbers that sum up to n."
+  },
+  {
+    "id": 17,
+    "title": "Letter Combinations of a Phone Number",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+    "tags": ["Hash Table", "String", "Backtracking"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-17",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations."
+  },
+  {
+    "id": 37,
+    "title": "Sudoku Solver",
+    "difficulty": "Hard",
+    "url": "https://leetcode.com/problems/sudoku-solver/",
+    "tags": ["Array", "Backtracking", "Matrix"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-37",
+    "description": "Write a program to solve a Sudoku puzzle by filling the empty cells."
+  },
+  {
+    "id": 131,
+    "title": "Palindrome Partitioning",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/palindrome-partitioning/",
+    "tags": ["String", "Dynamic Programming", "Backtracking"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-131",
+    "description": "Given a string s, partition s such that every substring of the partition is a palindrome."
+  },
+  {
+    "id": 93,
+    "title": "Restore IP Addresses",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/restore-ip-addresses/",
+    "tags": ["String", "Backtracking"],
+    "patterns": ["Backtracking"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-93",
+    "description": "A valid IP address consists of exactly four integers separated by single dots."
+  },
+  {
+    "id": 518,
+    "title": "Coin Change II",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/coin-change-ii/",
+    "tags": ["Array", "Dynamic Programming"],
+    "patterns": ["DP", "Unbounded Knapsack"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-518",
+    "description": "You are given an integer array coins and an integer amount. Return the number of combinations that make up that amount."
+  },
+  {
+    "id": 120,
+    "title": "Triangle",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/triangle/",
+    "tags": ["Array", "Dynamic Programming"],
+    "patterns": ["DP", "2D"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-120",
+    "description": "Given a triangle array, return the minimum path sum from top to bottom."
+  },
+  {
+    "id": 221,
+    "title": "Maximal Square",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/maximal-square/",
+    "tags": ["Array", "Dynamic Programming", "Matrix"],
+    "patterns": ["DP", "2D"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-221",
+    "description": "Given an m x n binary matrix filled with 0's and 1's, find the largest square containing only 1's."
+  },
+  {
+    "id": 1048,
+    "title": "Longest String Chain",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-string-chain/",
+    "tags": ["Array", "Hash Table", "Two Pointers", "String", "Dynamic Programming"],
+    "patterns": ["DP"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-1048",
+    "description": "You are given an array of words where each word consists of lowercase English letters."
+  },
+  {
+    "id": 123,
+    "title": "Best Time to Buy and Sell Stock III",
+    "difficulty": "Hard",
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+    "tags": ["Array", "Dynamic Programming"],
+    "patterns": ["DP"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-123",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day."
+  },
+  {
+    "id": 368,
+    "title": "Largest Divisible Subset",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/largest-divisible-subset/",
+    "tags": ["Array", "Math", "Dynamic Programming", "Sorting"],
+    "patterns": ["DP"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-368",
+    "description": "Given a set of distinct positive integers nums, return the largest subset answer."
+  },
+  {
+    "id": 309,
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+    "tags": ["Array", "Dynamic Programming"],
+    "patterns": ["DP"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-309",
+    "description": "You are given an array prices where prices[i] is the price of the stock on the ith day."
+  },
+  {
+    "id": 670,
+    "title": "Maximum Swap",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/maximum-swap/",
+    "tags": ["Math", "Greedy"],
+    "patterns": ["Greedy"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-670",
+    "description": "You are given an integer num. You can swap two digits at most once to get the maximum valued number."
+  },
+  {
+    "id": 452,
+    "title": "Minimum Number of Arrows to Burst Balloons",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+    "tags": ["Array", "Greedy", "Sorting"],
+    "patterns": ["Greedy", "Sorting"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-452",
+    "description": "There are some spherical balloons taped onto a flat wall that represents the XY-plane."
   }
 ]
