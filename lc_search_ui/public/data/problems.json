@@ -2033,5 +2033,148 @@
     "companies": ["Google"],
     "dateAdded": "2023-01-2335",
     "description": "You have a water dispenser that can dispense cold, warm, and hot water."
+  },
+  {
+    "id": 128,
+    "title": "Longest Consecutive Sequence",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+    "tags": ["Array", "Hash Table", "Union Find"],
+    "patterns": ["Hash Set", "Union Find"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-128",
+    "description": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence."
+  },
+  {
+    "id": 179,
+    "title": "Largest Number",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/largest-number/",
+    "tags": ["Array", "String", "Greedy", "Sorting"],
+    "patterns": ["Sorting", "Custom Comparator"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-179",
+    "description": "Given a list of non-negative integers nums, arrange them such that they form the largest number."
+  },
+  {
+    "id": 48,
+    "title": "Rotate Image",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/rotate-image/",
+    "tags": ["Array", "Math", "Matrix"],
+    "patterns": ["Matrix Manipulation", "Simulation"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-48",
+    "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise)."
+  },
+  {
+    "id": 344,
+    "title": "Reverse String",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/reverse-string/",
+    "tags": ["Two Pointers", "String", "Recursion"],
+    "patterns": ["Two Pointers", "In-place Swap"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-344",
+    "description": "Write a function that reverses a string. The input string is given as an array of characters s."
+  },
+  {
+    "id": 134,
+    "title": "Gas Station",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/gas-station/",
+    "tags": ["Array", "Greedy"],
+    "patterns": ["Greedy", "Prefix Sum"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-134",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the ith station is gas[i]."
+  },
+  {
+    "id": 165,
+    "title": "Compare Version Numbers",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/compare-version-numbers/",
+    "tags": ["Two Pointers", "String"],
+    "patterns": ["String Parsing", "Two Pointers"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-165",
+    "description": "Given two version numbers, version1 and version2, compare them."
+  },
+  {
+    "id": 277,
+    "title": "Find the Celebrity",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/find-the-celebrity/",
+    "tags": ["Two Pointers", "Greedy", "Interactive"],
+    "patterns": ["Graph Degree", "Elimination"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-277",
+    "description": "Suppose you are at a party with n people labeled from 0 to n - 1 and among them, there may exist one celebrity."
+  },
+  {
+    "id": 43,
+    "title": "Multiply Strings",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/multiply-strings/",
+    "tags": ["Math", "String", "Simulation"],
+    "patterns": ["String", "Simulation"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-43",
+    "description": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string."
+  },
+  {
+    "id": 67,
+    "title": "Add Binary",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/add-binary/",
+    "tags": ["Math", "String", "Bit Manipulation", "Simulation"],
+    "patterns": ["Bit Manipulation", "String Simulation"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-67",
+    "description": "Given two binary strings a and b, return their sum as a binary string."
+  },
+  {
+    "id": 283,
+    "title": "Move Zeroes",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/move-zeroes/",
+    "tags": ["Array", "Two Pointers"],
+    "patterns": ["Two Pointers", "In-place Swap"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-283",
+    "description": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements."
+  },
+  {
+    "id": 387,
+    "title": "First Unique Character in a String",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/first-unique-character-in-a-string/",
+    "tags": ["Hash Table", "String", "Queue", "Counting"],
+    "patterns": ["Hash Map", "Counting"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-387",
+    "description": "Given a string s, find the first non-repeating character in it and return its index."
+  },
+  {
+    "id": 54,
+    "title": "Spiral Matrix",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/spiral-matrix/",
+    "tags": ["Array", "Matrix", "Simulation"],
+    "patterns": ["Simulation", "Matrix Traversal"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-54",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order."
+  },
+  {
+    "id": 59,
+    "title": "Spiral Matrix II",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/spiral-matrix-ii/",
+    "tags": ["Array", "Matrix", "Simulation"],
+    "patterns": ["Simulation", "Matrix Traversal"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-59",
+    "description": "Given a positive integer n, generate an n x n matrix filled with elements from 1 to n^2 in spiral order."
   }
 ]
