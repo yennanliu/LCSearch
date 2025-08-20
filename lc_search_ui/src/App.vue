@@ -25,6 +25,7 @@
         @search="handleSearch" 
         @filter="handleFilter"
         @sort="handleSort"
+        @download-csv="downloadCSV"
       />
       <ProblemList 
         :problems="filteredProblems"
@@ -174,6 +175,76 @@ export default {
       }
     }
 
+    const downloadCSV = () => {
+      // Get the current filtered problems
+      const data = filteredProblems.value
+      
+      if (data.length === 0) {
+        alert('No problems to download!')
+        return
+      }
+
+      // Define CSV headers
+      const headers = [
+        'ID',
+        'Title',
+        'Difficulty',
+        'URL',
+        'Tags',
+        'Patterns',
+        'Companies',
+        'Date Added',
+        'Description'
+      ]
+
+      // Convert data to CSV rows
+      const csvRows = [
+        headers.join(','), // Header row
+        ...data.map(problem => [
+          problem.id,
+          `"${problem.title.replace(/"/g, '""')}"`, // Escape quotes in title
+          problem.difficulty,
+          problem.url,
+          `"${problem.tags.join(', ')}"`,
+          `"${problem.patterns.join(', ')}"`,
+          `"${problem.companies.join(', ')}"`,
+          problem.dateAdded,
+          `"${(problem.description || '').replace(/"/g, '""')}"` // Escape quotes and handle undefined
+        ].join(','))
+      ]
+
+      // Create CSV content
+      const csvContent = csvRows.join('\n')
+      
+      // Create and download file
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+      const link = document.createElement('a')
+      
+      if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob)
+        link.setAttribute('href', url)
+        
+        // Generate filename with current date and filter info
+        const timestamp = new Date().toISOString().split('T')[0]
+        const isFiltered = searchQuery.value || 
+                          filters.value.difficulty || 
+                          filters.value.tags.length > 0 ||
+                          filters.value.patterns.length > 0 ||
+                          filters.value.companies.length > 0
+        
+        const filename = isFiltered 
+          ? `leetcode_problems_filtered_${timestamp}.csv`
+          : `leetcode_problems_${timestamp}.csv`
+        
+        link.setAttribute('download', filename)
+        link.style.visibility = 'hidden'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      }
+    }
+
     onMounted(loadProblems)
 
     return {
@@ -184,7 +255,8 @@ export default {
       handleSearch,
       handleFilter,
       handleSort,
-      handleDataUpdate
+      handleDataUpdate,
+      downloadCSV
     }
   }
 }
