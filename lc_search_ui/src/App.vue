@@ -195,11 +195,11 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #222222;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #FFFFFF;
   min-height: 100vh;
   position: relative;
 }
@@ -212,9 +212,9 @@ export default {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(255, 56, 92, 0.02) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(255, 56, 92, 0.015) 0%, transparent 60%),
+    radial-gradient(circle at 40% 40%, rgba(255, 56, 92, 0.01) 0%, transparent 60%);
   z-index: -1;
 }
 
@@ -222,27 +222,29 @@ export default {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 56, 92, 0.1);
 }
 
 .app-header h1 {
   margin: 0 0 0.5rem 0;
-  font-size: 3rem;
-  font-weight: 700;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%);
+  font-size: 4rem;
+  font-weight: 800;
+  text-shadow: 0 4px 8px rgba(255, 56, 92, 0.15);
+  background: linear-gradient(135deg, #FF385C 0%, #FF6B98 50%, #FF385C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
+  letter-spacing: -0.02em;
 }
 
 .app-header p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #FF385C;
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(255, 56, 92, 0.1);
+  letter-spacing: 0.01em;
 }
 
 .app-main {

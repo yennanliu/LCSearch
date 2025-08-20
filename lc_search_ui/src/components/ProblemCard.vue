@@ -98,13 +98,13 @@ export default {
 
 <style scoped>
 .problem-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 3px 10px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 56, 92, 0.04);
   position: relative;
   overflow: hidden;
 }
@@ -126,9 +126,9 @@ export default {
 
 .problem-card:hover {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-color: rgba(103, 126, 234, 0.2);
-  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.08), 0 0 0 2px rgba(255, 56, 92, 0.12);
+  border-color: rgba(255, 56, 92, 0.3);
+  transform: translateY(-6px);
 }
 
 .problem-header {
@@ -142,20 +142,22 @@ export default {
 }
 
 .problem-title {
-  color: #1976d2;
+  color: #FF385C;
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   line-height: 1.3;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.2s ease;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
 }
 
 .problem-title:hover {
-  color: #1565c0;
-  text-decoration: underline;
+  color: #FF6B98;
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .external-link {
@@ -171,26 +173,31 @@ export default {
 }
 
 .difficulty {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 0.8rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .difficulty.easy {
-  background: #d4edda;
-  color: #155724;
+  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .difficulty.medium {
-  background: #fff3cd;
-  color: #856404;
+  background: linear-gradient(135deg, #FFA726 0%, #FF9800 100%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .difficulty.hard {
-  background: #f8d7da;
-  color: #721c24;
+  background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .problem-id {

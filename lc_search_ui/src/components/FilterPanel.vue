@@ -200,35 +200,35 @@ export default {
 .filter-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0.5rem;
+  gap: 0.75rem;
+  font-weight: 700;
+  color: #222222;
+  font-size: 1.2rem;
+  text-shadow: none;
+  margin-bottom: 0.75rem;
 }
 
 .filter-select {
-  padding: 12px 16px;
+  padding: 16px 20px;
   border: none;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  max-width: 220px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 56, 92, 0.06);
+  max-width: 260px;
   cursor: pointer;
   outline: none;
-  transition: all 0.3s ease;
-  color: #374151;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #222222;
 }
 
 .filter-select:focus,
 .filter-select:hover {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(103, 126, 234, 0.1);
-  transform: translateY(-1px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12), 0 0 0 3px rgba(255, 56, 92, 0.15);
+  transform: translateY(-2px);
 }
 
 .filter-chips {
@@ -238,21 +238,21 @@ export default {
 }
 
 .filter-chip {
-  padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
-  color: #1f2937;
-  backdrop-filter: blur(15px);
+  color: #222222;
+  backdrop-filter: blur(20px);
   text-shadow: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 1px rgba(255, 56, 92, 0.06);
 }
 
 .filter-chip::before {
@@ -272,26 +272,26 @@ export default {
 
 .filter-chip:hover {
   background: rgba(255, 255, 255, 1);
-  border-color: rgba(103, 126, 234, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
-  color: #374151;
+  border-color: rgba(255, 56, 92, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1), 0 0 0 1px rgba(255, 56, 92, 0.1);
+  color: #222222;
 }
 
 .filter-chip.active {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border-color: #059669;
+  background: linear-gradient(135deg, #FF385C 0%, #FF6B98 100%);
+  border-color: #FF385C;
   color: white;
-  font-weight: 700;
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4), 0 3px 10px rgba(16, 185, 129, 0.3);
-  transform: translateY(-3px);
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(255, 56, 92, 0.4), 0 6px 15px rgba(255, 56, 92, 0.25);
+  transform: translateY(-4px);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .filter-chip.active:hover {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5), 0 8px 20px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #FF6B98 0%, #FFA726 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(255, 56, 92, 0.5), 0 10px 25px rgba(255, 56, 92, 0.3);
 }
 
 .show-more-btn {

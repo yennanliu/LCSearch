@@ -134,12 +134,12 @@ export default {
 
 <style scoped>
 .search-bar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 24px;
-  padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 12px 24px rgba(0, 0, 0, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
 }
@@ -151,8 +151,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 56, 92, 0.02) 0%, rgba(66, 165, 245, 0.02) 50%, rgba(102, 187, 106, 0.02) 100%);
+  border-radius: 28px;
   z-index: -1;
 }
 
@@ -173,18 +173,18 @@ export default {
 
 .search-input {
   width: 100%;
-  padding: 20px 24px 20px 56px;
-  font-size: 18px;
+  padding: 24px 28px 24px 64px;
+  font-size: 20px;
   font-weight: 500;
   border: none;
-  border-radius: 16px;
+  border-radius: 20px;
   outline: none;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 0 0 1px rgba(255, 56, 92, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
-  color: #1f2937;
+  color: #222222;
 }
 
 .search-input::placeholder {
@@ -194,13 +194,13 @@ export default {
 
 .search-input:focus {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 0 3px rgba(103, 126, 234, 0.1);
-  transform: translateY(-2px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 0 3px rgba(255, 56, 92, 0.15);
+  transform: translateY(-3px);
 }
 
 .search-input:focus + .search-icon,
 .search-input-container:hover .search-icon {
-  color: #667eea;
+  color: #FF385C;
 }
 
 .clear-button {
@@ -246,11 +246,11 @@ export default {
 .sort-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  color: white;
-  font-size: 0.95rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  gap: 0.75rem;
+  font-weight: 700;
+  color: #222222;
+  font-size: 1.1rem;
+  text-shadow: none;
 }
 
 .custom-select {
@@ -260,29 +260,30 @@ export default {
 
 .sort-select {
   width: 100%;
-  padding: 12px 44px 12px 16px;
+  padding: 16px 50px 16px 20px;
   border: none;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   cursor: pointer;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   appearance: none;
-  color: #374151;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: #222222;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 56, 92, 0.06);
 }
 
 .sort-select:focus {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(103, 126, 234, 0.1);
-  transform: translateY(-1px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12), 0 0 0 3px rgba(255, 56, 92, 0.15);
+  transform: translateY(-2px);
 }
 
 .sort-select:hover {
   background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 56, 92, 0.1);
   transform: translateY(-1px);
 }
 
@@ -297,7 +298,7 @@ export default {
 }
 
 .sort-select:focus + .select-arrow {
-  color: #667eea;
+  color: #FF385C;
   transform: translateY(-50%) rotate(180deg);
 }
 
