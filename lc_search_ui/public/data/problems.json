@@ -2451,5 +2451,93 @@
     "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
     "dateAdded": "2023-01-106",
     "description": "Given two integer arrays inorder and postorder, construct and return the binary tree."
+  },
+  {
+    "id": 399,
+    "title": "Evaluate Division",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/evaluate-division/",
+    "tags": ["Array", "Depth-First Search", "Breadth-First Search", "Union Find", "Graph", "Shortest Path"],
+    "patterns": ["Graph", "DFS", "BFS", "Weighted Edges"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-399",
+    "description": "You are given an array of variable pairs equations and an array of real numbers values."
+  },
+  {
+    "id": 733,
+    "title": "Flood Fill",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/flood-fill/",
+    "tags": ["Array", "Depth-First Search", "Breadth-First Search", "Matrix"],
+    "patterns": ["DFS", "BFS"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook", "Apple"],
+    "dateAdded": "2023-01-733",
+    "description": "An image is represented by an m x n integer grid image where image[i][j] represents the pixel value of the image."
+  },
+  {
+    "id": 802,
+    "title": "Find Eventual Safe States",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/find-eventual-safe-states/",
+    "tags": ["Depth-First Search", "Breadth-First Search", "Graph", "Topological Sort"],
+    "patterns": ["Graph DFS", "State Memo", "Topological"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-802",
+    "description": "There is a directed graph of n nodes with each node labeled from 0 to n - 1."
+  },
+  {
+    "id": 997,
+    "title": "Find the Town Judge",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/find-the-town-judge/",
+    "tags": ["Array", "Hash Table", "Graph"],
+    "patterns": ["Graph In-degree", "Out-degree Counting"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-997",
+    "description": "In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge."
+  },
+  {
+    "id": 1334,
+    "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+    "tags": ["Dynamic Programming", "Graph", "Shortest Path"],
+    "patterns": ["Floyd-Warshall", "Dijkstra All-Pairs"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-1334",
+    "description": "There are n cities numbered from 0 to n-1. Given the array edges where edges[i] = [fromi, toi, weighti]."
+  },
+  {
+    "id": 1905,
+    "title": "Count Sub Islands",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/count-sub-islands/",
+    "tags": ["Array", "Depth-First Search", "Breadth-First Search", "Union Find", "Matrix"],
+    "patterns": ["DFS", "BFS"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-1905",
+    "description": "You are given two m x n binary matrices grid1 and grid2 containing only 0's and 1's."
+  },
+  {
+    "id": 1584,
+    "title": "Min Cost to Connect All Points",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+    "tags": ["Array", "Union Find", "Minimum Spanning Tree"],
+    "patterns": ["Kruskal", "Prim's MST"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-1584",
+    "description": "You are given an array points representing integer coordinates of some points on a 2D-plane."
+  },
+  {
+    "id": 1557,
+    "title": "Minimum Number of Vertices to Reach All Nodes",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/",
+    "tags": ["Graph"],
+    "patterns": ["Graph In-degree Counting"],
+    "companies": ["Google", "Amazon", "Microsoft", "Facebook"],
+    "dateAdded": "2023-01-1557",
+    "description": "Given a directed acyclic graph, with n vertices numbered from 0 to n-1, and an array edges."
   }
 ]
