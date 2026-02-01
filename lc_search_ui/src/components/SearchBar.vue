@@ -33,14 +33,15 @@
           Sort by
         </label>
         <div class="custom-select">
-          <select 
+          <select
             id="sort-select"
-            v-model="currentSort" 
+            v-model="currentSort"
             @change="handleSort"
             class="sort-select"
           >
             <option value="recency">Latest First</option>
             <option value="difficulty">Difficulty (Easy → Hard)</option>
+            <option value="difficulty-desc">Difficulty (Hard → Easy)</option>
             <option value="title">Title (A → Z)</option>
             <option value="id">Problem ID</option>
           </select>

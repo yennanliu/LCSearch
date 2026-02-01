@@ -168,18 +168,18 @@ export default {
 .problem-meta {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.9rem;
+  gap: 1.25rem;
+  font-size: 0.95rem;
 }
 
 .difficulty {
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 22px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .difficulty.easy {
@@ -201,54 +201,60 @@ export default {
 }
 
 .problem-id {
-  color: #666;
-  font-weight: 500;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .date-added {
-  color: #666;
-  font-size: 0.8rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .problem-description {
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .problem-tags {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .tag-group {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .tag-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #333;
-  min-width: 80px;
-  padding-top: 2px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #374151;
+  min-width: 90px;
+  padding-top: 4px;
+  letter-spacing: 0.02em;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.6rem;
   flex: 1;
 }
 
 .tag {
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .tag-type {
@@ -276,22 +282,27 @@ export default {
   .problem-card {
     padding: 1rem;
   }
-  
+
   .problem-title {
     font-size: 1.1rem;
   }
-  
+
+  .problem-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
   .problem-meta {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  
+
   .tag-group {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
   }
-  
+
   .tag-label {
     min-width: auto;
   }

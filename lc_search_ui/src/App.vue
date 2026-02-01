@@ -63,13 +63,17 @@ export default {
 
     const sortProblems = (problems, sortBy) => {
       const sorted = [...problems]
-      
+
       switch (sortBy) {
         case 'recency':
           return sorted.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
         case 'difficulty': {
           const difficultyOrder = { 'Easy': 1, 'Medium': 2, 'Hard': 3 }
           return sorted.sort((a, b) => difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty])
+        }
+        case 'difficulty-desc': {
+          const difficultyOrder = { 'Easy': 1, 'Medium': 2, 'Hard': 3 }
+          return sorted.sort((a, b) => difficultyOrder[b.difficulty] - difficultyOrder[a.difficulty])
         }
         case 'title':
           return sorted.sort((a, b) => a.title.localeCompare(b.title))
