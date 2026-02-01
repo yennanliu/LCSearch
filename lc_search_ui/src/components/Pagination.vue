@@ -13,15 +13,22 @@
     </button>
 
     <div class="pagination-numbers">
-      <button 
-        v-for="page in visiblePages" 
-        :key="page"
-        @click="goToPage(page)"
-        class="pagination-btn pagination-btn-number"
-        :class="{ active: page === currentPage }"
-      >
-        {{ page }}
-      </button>
+      <template v-for="(page, index) in visiblePages" :key="index">
+        <span
+          v-if="page === '...'"
+          class="pagination-ellipsis"
+        >
+          ...
+        </span>
+        <button
+          v-else
+          @click="goToPage(page)"
+          class="pagination-btn pagination-btn-number"
+          :class="{ active: page === currentPage }"
+        >
+          {{ page }}
+        </button>
+      </template>
     </div>
 
     <button 
@@ -43,12 +50,19 @@
       <span class="items-info">
         {{ startItem }}-{{ endItem }} of {{ totalItems }} problems
       </span>
+      <button
+        v-if="totalPages > 15"
+        @click="toggleShowAllPages"
+        class="toggle-all-pages-btn"
+      >
+        {{ showAllPages ? 'Show Less' : 'Show All Pages' }}
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 
 export default {
   name: 'ProblemPagination',
@@ -68,22 +82,64 @@ export default {
   },
   emits: ['page-change'],
   setup(props, { emit }) {
+    const showAllPages = ref(false)
+
     const totalPages = computed(() => Math.ceil(props.totalItems / props.itemsPerPage))
-    
+
     const startItem = computed(() => (props.currentPage - 1) * props.itemsPerPage + 1)
     const endItem = computed(() => Math.min(props.currentPage * props.itemsPerPage, props.totalItems))
 
     const visiblePages = computed(() => {
       const pages = []
-      const start = Math.max(1, props.currentPage - 2)
-      const end = Math.min(totalPages.value, props.currentPage + 2)
-      
-      for (let i = start; i <= end; i++) {
-        pages.push(i)
+      const total = totalPages.value
+      const current = props.currentPage
+
+      // If show all pages is enabled or total pages is small, show all pages
+      if (showAllPages.value || total <= 15) {
+        for (let i = 1; i <= total; i++) {
+          pages.push(i)
+        }
+        return pages
       }
-      
+
+      // For larger page counts, use smart pagination with ellipsis
+      // Always show: first page, last page, current page, and 2 pages on each side of current
+
+      // Always add first page
+      pages.push(1)
+
+      // Calculate range around current page
+      const leftBound = Math.max(2, current - 2)
+      const rightBound = Math.min(total - 1, current + 2)
+
+      // Add ellipsis after first page if needed
+      if (leftBound > 2) {
+        pages.push('...')
+      }
+
+      // Add pages around current page
+      for (let i = leftBound; i <= rightBound; i++) {
+        if (i !== 1 && i !== total) {
+          pages.push(i)
+        }
+      }
+
+      // Add ellipsis before last page if needed
+      if (rightBound < total - 1) {
+        pages.push('...')
+      }
+
+      // Always add last page
+      if (total > 1) {
+        pages.push(total)
+      }
+
       return pages
     })
+
+    const toggleShowAllPages = () => {
+      showAllPages.value = !showAllPages.value
+    }
 
     const goToPage = (page) => {
       if (page >= 1 && page <= totalPages.value && page !== props.currentPage) {
@@ -96,7 +152,9 @@ export default {
       startItem,
       endItem,
       visiblePages,
-      goToPage
+      goToPage,
+      showAllPages,
+      toggleShowAllPages
     }
   }
 }
@@ -120,6 +178,20 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination-ellipsis {
+  color: #6b7280;
+  font-weight: 600;
+  padding: 0 8px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
 }
 
 .pagination-btn {
@@ -196,6 +268,26 @@ export default {
 .items-info {
   font-weight: 400;
   color: #6b7280;
+}
+
+.toggle-all-pages-btn {
+  margin-top: 0.75rem;
+  padding: 8px 16px;
+  border: 2px solid rgba(103, 126, 234, 0.3);
+  border-radius: 8px;
+  background: rgba(103, 126, 234, 0.1);
+  color: #667eea;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-all-pages-btn:hover {
+  background: rgba(103, 126, 234, 0.2);
+  border-color: rgba(103, 126, 234, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(103, 126, 234, 0.2);
 }
 
 @media (max-width: 768px) {
